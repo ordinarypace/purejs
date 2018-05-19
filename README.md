@@ -1,5 +1,5 @@
 # purejs
-Not SPA, Simple Framework base ES2015+
+Not SPA, Simple Framework base ES2015+, Laravel (bundling to laravel mix)
 
 # Use
 
