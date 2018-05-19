@@ -25,9 +25,9 @@ const Tab = (_ => {
          */
         assign(options){
             const def = {
-                list: '.futures-tab__list',
-                items: '.futures-tab__item',
-                panels: '.futures-tab__panel',
+                list: '.list',
+                items: '.item',
+                panels: 'panel',
                 cls: 'selected',
                 startIndex: 0
             };
