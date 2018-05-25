@@ -11,11 +11,11 @@ const Service = (_ => {
          * @desc initialized
          * @param modules
          */
-        constructor(){
+        constructor(global){
             this[service] = { __version__: 1.0 };
 
             this.use([Http, Template]);
-            this.setRouter();
+            this.setRouter(global);
         }
 
         /**
@@ -31,8 +31,8 @@ const Service = (_ => {
         /**
          * @desc router loader
          */
-        setRouter(){
-            Loader().then(v => Router({ Scheme: v.default, context: this }));
+        setRouter(global){
+            Loader().then(v => Router({ Scheme: v.default, context: this, global }));
         }
     };
 })();
