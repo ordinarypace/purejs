@@ -8,7 +8,7 @@ const Loader = _ => import('./scheme/index');
 /**
 * @desc Router
 */
-const Router = ({ Scheme, context }) => {
+const Router = ({ Scheme, context, global }) => {
     const instances = new Map(), { pathname } = location;
     const g = pathname.split('/');
 
@@ -69,7 +69,10 @@ const Router = ({ Scheme, context }) => {
     };
 
     procedure.set(context);
-    Helper.object.prop(context, { router: procedure });
+    if(!('futures' in global)){
+        global.futures = {};
+        global.futures.router = procedure;
+    }
 };
 
 export { Router, Loader };
