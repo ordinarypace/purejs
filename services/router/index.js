@@ -69,9 +69,9 @@ const Router = ({ Scheme, context, global }) => {
     };
 
     procedure.set(context);
-    if(!('futures' in global)){
-        global.futures = {};
-        global.futures.router = procedure;
+    if(!('purejs' in global)){
+        global.purejs = {};
+        global.purejs.router = procedure;
     }
 };
 
