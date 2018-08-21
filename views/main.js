@@ -1,10 +1,10 @@
-import Helper from '@/helpers';
-
 const Main = class {
-    constructor(service, template){
-        Helper.object.prop(this, { ...service });
+    constructor(service, template, router){
+        js.props(this, { ...service });
 
         this._template = template;
+        this._router = router;
+
         this._fetchData();
     }
 
@@ -16,7 +16,7 @@ const Main = class {
     render({ data }){
         const render = [
             {
-                target: Helper.$.get('#app'),
+                target: js.$('#app'),
                 data: data,
                 component: this._template.index
             }

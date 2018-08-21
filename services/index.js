@@ -1,7 +1,6 @@
 import { Router, Loader } from './router';
 import Http from './http';
 import Template from './template';
-import Helper from '@/helpers';
 
 const Service = (_ => {
     const service = Symbol('purejs');
@@ -25,7 +24,7 @@ const Service = (_ => {
         use(modules){
             if(!Array.isArray(modules)) modules = [modules];
 
-            modules.map(v => Helper.object.prop(this, { [(v.name || Helper.func.name(v)).toLowerCase()]: typeof v === 'function' && 'prototype' in v ? new v() : v }));
+            modules.map(v => js.props(this, { [(v.name || js.name(v)).toLowerCase()]: typeof v === 'function' && 'prototype' in v ? new v() : v }));
         }
 
         /**

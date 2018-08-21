@@ -1,7 +1,5 @@
-import helper from '@/utility/templateHelpers';
-
 export default {
-    index({ data, index }){
+    index({ data }){
         return (`<div class="main">${data}</div`);
     }
 };

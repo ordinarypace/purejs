@@ -1,8 +1,6 @@
-import Helper from '@/helpers';
 import axios from 'axios';
 
 const Http = _ => {
-    const env = process.env.NODE_ENV;
     const csrf = 'Laravel' in window && Laravel.csrfToken;
     const http = axios.create(csrf && { headers: { 'X-CSRF-TOKEN': csrf.content } });
 
@@ -40,7 +38,7 @@ const Http = _ => {
     const request = async ({ method, url, payload = {}, headers }) => {
         const { Helpers } = http.defaults.headers;
 
-        if(!Helper.string.isEmpty(url) && !Helper.string.isPrimitive(url)) Helper.err('Invalid url!');
+        if(!js.empty(url)) throw new Error('invalid url');
 
         if(headers) Helpers[headers.key] = headers.value;
 

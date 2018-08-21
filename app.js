@@ -1,7 +1,6 @@
 import 'babel-polyfill';
 import Service from '@/services';
-import Fonts from '@/utility/fonts';
-import Helper from '@/helpers';
+import  '@/helpers';
 
 const purejs = (global => {
     /**

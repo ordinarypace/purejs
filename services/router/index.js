@@ -1,5 +1,3 @@
-import Helper from '@/helpers';
-
 /**
 * @desc Scheme Loader. dynamic importer. supported mobile, pc, etc.
 */
@@ -54,7 +52,7 @@ const Router = ({ Scheme, context, global }) => {
         },
 
         get instance(){
-            if(!instances.has(component.name)) Helper.err('Must be instance name!');
+            if(!instances.has(component.name)) throw new Error('Must be instance name!');
 
             return instances.get(component.name);
         },
@@ -69,6 +67,7 @@ const Router = ({ Scheme, context, global }) => {
     };
 
     procedure.set(context);
+
     if(!('purejs' in global)){
         global.purejs = {};
         global.purejs.router = procedure;

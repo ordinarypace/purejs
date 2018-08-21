@@ -8,7 +8,8 @@ const Router = [
     {
         path: '/',
         component: main,
-        template: MAIN
+        template: MAIN,
+        auth: false
     }
 ];
 

@@ -19,8 +19,8 @@
     "cross-env": "^5.1",
     "laravel-mix": "^2.0",
     "mobile-detect": "^1.4.1",
-    "popper.js": "^1.12",
-    "swiper": "^4.0.0"
+    "moment": "^2.22.2",
+    "popper.js": "^1.12"
   },
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1"
